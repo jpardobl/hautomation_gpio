@@ -23,6 +23,7 @@ class TestGPIO(unittest.TestCase):
             RPIO.gpio_function(TEST_WITH) == RPIO.OUT,
             "Not properly changing GPIO26 to OUTPUT mode")
 
+
     def test_switch(self):
         set_to_output(TEST_WITH)
         pl_switch(TEST_WITH, "off")
