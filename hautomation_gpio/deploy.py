@@ -15,7 +15,11 @@ def populate_db():
         from hacore.models import Protocol
 
         if Protocol.objects.filter(name="X10").count() == 0:
-            Protocol(name="GPIO", gobj_name="driver_GPIO", module="hautomation_gpio", validate_address_module="hautomation_gpio.utils").save()
+            Protocol(
+                name="GPIO",
+                gobj_name="driver_GPIO",
+                module="hautomation_gpio",
+                validate_address_module="hautomation_gpio.utils").save()
             sys.stdout.writelines("Protocoll successfully populated into db")
         else:
             sys.stdout.writelines("Protocol is already at the db. No changes made.")

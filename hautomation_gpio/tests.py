@@ -12,9 +12,7 @@ class TestGPIO(unittest.TestCase):
         self.assertRaises(
             ValueError,
             validate_address,
-            100,
-            "Not properly validating address, as does not raise any \
-                exception validating unexisting GPIO100")
+            100)
         self.assertTrue(
             validate_address(TEST_WITH),
             "Not properly validating address, as returns 26 as a not valid GPIO PIN")
@@ -27,15 +25,15 @@ class TestGPIO(unittest.TestCase):
 
     def test_switch(self):
         set_to_output(TEST_WITH)
-        switch(TEST_WITH, "off")
+        pl_switch(TEST_WITH, "off")
         self.assertFalse(
             RPIO.forceinput(TEST_WITH),
             "Not properly turning off GPIO%s" % TEST_WITH)
-        switch(TEST_WITH, "on")
+        pl_switch(TEST_WITH, "on")
         self.assertTrue(
             RPIO.forceinput(TEST_WITH),
             "Not properly turning on GPIO%s" % TEST_WITH)
-        switch(TEST_WITH, "off")
+        pl_switch(TEST_WITH, "off")
         self.assertFalse(
             RPIO.forceinput(TEST_WITH),
             "Not properly turning off GPIO%s" % TEST_WITH)
