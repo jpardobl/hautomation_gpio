@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='hautomation_gpio',
-    version='0.1',
+    version='0.2.1',
     packages=['hautomation_gpio'],
     include_package_data=True,
     license='BSD License',
@@ -20,6 +20,7 @@ setup(
     author_email='jpardo@digitalhigh.es',
     install_requires = (
       #"simplejson==2.6.2",
+       "RPIO",
     ),
     #test_suite='hautomation_gpio.tests.main',
     #tests_require=("selenium", "requests"),
