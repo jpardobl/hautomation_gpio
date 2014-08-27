@@ -12,7 +12,7 @@ def is_output(address):
 
 
 def validate_address(address):
-    if address not in USED_GPIO_LIST:
+    if int(address) not in USED_GPIO_LIST:
         raise ValueError("Unsupported address: %s for GPIO \
             driver with Hardware revision: %s" % (
                 address,
