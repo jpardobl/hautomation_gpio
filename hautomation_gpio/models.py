@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django_hautomation.hacore.models import Device
+from hacore.models import Device
 from hautomation_gpio.cmds import set_to_output
 from hautomation_gpio.utils import is_output
 

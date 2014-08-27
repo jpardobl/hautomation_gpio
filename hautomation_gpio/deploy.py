@@ -14,7 +14,7 @@ def populate_db():
 
         from hacore.models import Protocol
 
-        if Protocol.objects.filter(name="X10").count() == 0:
+        if Protocol.objects.filter(name="GPIO").count() == 0:
             Protocol(
                 name="GPIO",
                 gobj_name="driver_GPIO",
