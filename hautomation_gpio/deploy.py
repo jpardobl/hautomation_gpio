@@ -25,7 +25,7 @@ def populate_db():
             sys.stdout.writelines("Protocol is already at the db. No changes made.")
         sys.path.remove(os.getcwd())
         sys.exit(0)
-    except Exception, ex:
+    except Exception as  ex:
         sys.path.remove(os.getcwd())
         sys.stderr.writelines(ex.message)
         sys.exit(1)
