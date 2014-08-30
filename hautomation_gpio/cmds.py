@@ -23,11 +23,7 @@ def pl_switch(address, value):
     address = int(address)
     validate_address(address)
 
-    if not is_output(address):
-        logger.warning("GPIO%s is not OUTPUT configured, changing it ti OUTPUT" % address)
-        set_to_output(address)
-
-
+    set_to_output(address)
     RPIO.output(address, value == "on")
 
 
