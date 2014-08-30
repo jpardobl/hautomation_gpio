@@ -1,5 +1,5 @@
 import RPIO
-
+import models
 
 class WrongGPIOConfiguration(Exception):
     pass

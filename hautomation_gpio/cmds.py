@@ -3,9 +3,13 @@ import RPIO
 from hautomation_gpio import WrongGPIOConfiguration, USED_GPIO_LIST
 
 import logging
-from django.conf import settings
 
 logger = logging.getLogger("driver")
+try:
+    from django.conf import settings
+except:
+    import hautomation_gpio.settings
+
 logger.setLevel(settings.LOG_LEVEL)
 
 
@@ -21,7 +25,7 @@ def pl_switch(address, value):
 
     if not is_output(address):
         logger.warning("GPIO%s is not OUTPUT configured, changing it ti OUTPUT" % address)
-    set_to_output(address)
+        set_to_output(address)
 
 
     RPIO.output(address, value == "on")
